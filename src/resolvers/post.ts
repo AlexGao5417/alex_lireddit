@@ -5,6 +5,11 @@ import { idText } from 'typescript';
 
 @Resolver()
 export class PostResolver {
+    /**
+     * All a decorator is, is a function that takes a class as an argument.
+     * 
+     */
+
     @Query(() => [Post])
     posts(@Ctx() { em }: MyContext): Promise<Post[]>{
         return em.find(Post, {})  
